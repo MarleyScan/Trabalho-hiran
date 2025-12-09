@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    color: #dedede;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+
+
+span {
+    color: #8f9db3;
+    font-weight: 500;
+}
+
+
+
+span p,
+h1,
+h2,
+h3 {
+    user-select: none;
+}
+
+
+
+.radius-border {
+    padding: 1rem;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+    border-radius: 0.4rem;
+}
+
+.component {
+    width: 100%;
+    padding: 0 3rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    padding-top: 2rem;
+
+    background-color: #0f172a;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.dashboard-tasks {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.dashboard-task-information>.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 20rem;
+    height: 100%;
+
+}
+
+.dashboard-task-information>.info>span {
+    font-size: 0.8rem;
+}
+
+.active-projects {
+    background-color: #1e293b;
+}
+
+.active-projects>h3 {
+    padding-bottom: 1rem;
+}
+
+.active-projects>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.active-projects tbody tr {
+    transition: background-color .2s;
+}
+
+.active-projects td {
+    padding: 16px 24px;
+    vertical-align: middle;
+    border-bottom: 1px solid #334155;
+}
+
+
+.active-projects tbody tr:hover {
+    background-color: #475569;
+}
+
+.active-projects>.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #16343b;
+    color: green;
+    text-transform: lowercase;
+}
+
+.active-projects>.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #10b981, #059669);
+    border-radius: 9999px;
+}
+
+.progress-text {
+    font-size: 14px;
+    min-width: 3ch;
+    color: #475569;
+    font-weight: 500;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tasks>.moon {
+    display: grid;
+    grid-column-gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tasks>.moon .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.tasks-components {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* --- Variáveis de Cores (ATUALIZADAS) --- */
+:root {
+    --color-high: #e34c4c;    /* Vermelho (Prioridade High - Não muda) */
+    --color-medium: #e3ac4c;  /* Laranja (Prioridade Medium - Não muda) */
+    --color-low: #5cc69c;     /* Verde (Prioridade Low - Não muda) */
+    --color-primary-button: #5c62d6; /* Azul/Roxo (Botão 'All' - Não muda) */
+    --text-secondary: #8f9db3;
+    --bg-card: #1e293b;       /* Fundo do card na imagem - Não muda */
+    --bg-tag: #334155;        /* CORRIGIDO: Cor que você solicitou para Tags e Contagem */
+    --bg-dark-base: #1e293b; /* Fundo principal (do seu .radius-border) */
+}
+
+/* --- 1. Layout do Task Board (Filtros) --- */
+
+.task-board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+.tasks h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn, .sort-btn {
+    background: none;
+    border: 1px solid #475569; 
+    color: #dedede;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700; 
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: #334155;
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary-button);
+    border-color: var(--color-primary-button);
+}
+
+.icon-btn {
+    background-color: var(--bg-card); 
+    border: none;
+}
+
+/* --- 2. Títulos e Contagem de Tarefas nas Colunas --- */
+
+/* Esta regra AGORA USA --bg-tag: #334155 */
+.tasks>.moon .top-bar p:last-child {
+    background-color: var(--bg-tag);
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* --- 3. Cartões de Tarefa (.task-card) --- */
+
+.task-card {
+    background-color: var(--bg-card); 
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    border: 1px solid #334155; 
+    
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.task-title {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 900;
+}
+
+.task-description {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* --- 4. Prioridade (high, medium, low) --- */
+/* Note que as cores de prioridade (high/medium/low) usam as variáveis correspondentes e NÃO a cor #334155, 
+   o que está correto de acordo com a imagem que mostra o HIGH em vermelho. */
+
+.priority {
+    font-size: 0.75em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.priority.high {
+    background-color: var(--color-high);
+    color: #ffffff;
+}
+
+.priority.medium {
+    background-color: var(--color-medium);
+    color: #ffffff; 
+}
+
+.priority.low {
+    background-color: var(--color-low);
+    color: #ffffff; 
+}
+
+/* --- 5. Tags de Categoria --- */
+
+.tags {
+    margin-top: 5px;
+}
+
+/* Esta regra AGORA USA --bg-tag: #334155 */
+.tag {
+    display: inline-block;
+    background-color: var(--bg-tag);
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+/* --- 6. Footer do Cartão (Usuário e Data) --- */
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    padding-top: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.username {
+    color: #dedede;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--color-primary-button);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+/* Cores específicas para avatares */
+.avatar.ak { background-color: #5c62d6; }
+.avatar.sc { background-color: #e3ac4c; }
+.avatar.mj { background-color: #5cc69c; }
+.avatar.cp { background-color: #e34c4c; }
+.avatar.jl { background-color: #ff7f50; }
+.avatar.ew { background-color: #9370db; }
+
+.date {
+    font-weight: 500;
+    color: var(--text-secondary);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <!-- Conectar o arquivo CSS aqui -->
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <main class="container">
+    <section class="login-card" aria-labelledby="login-title">
+      <h2 id="login-title">Entrar</h2>
+
+      <form>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-label="Email" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="field">
+          <label for="password">Senha</label>
+          <input id="password" name="password" type="password" required aria-label="Senha" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="options">
+          <label class="remember">
+            <input type="checkbox" name="remember" aria-label="Lembrar-me" />
+            <span>Lembrar-me</span>
+          </label>
+
+          <a href="#" class="forgot">Esqueci a senha</a>
+        </div>
+
+        <!-- Botão como link -->
+        <a href="pagina.html" class="btn-primary" role="button">Entrar</a>
+
+        <div class="status success" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025</p>
+  </footer>
+</body>
+</html>

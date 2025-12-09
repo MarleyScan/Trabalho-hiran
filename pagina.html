@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pagina.css">
+</head>
+
+<body>
+    <div>
+        <nav>
+            <!-- Menu futuramente -->
+        </nav>
+
+        <main>
+            <div class="content">
+
+                <!-- TOPO DO DASHBOARD -->
+                <div class="component">
+                    <div class="dashboard">
+                        <h2>Painel de Controle</h2>
+                        <span>Bem-vindo de volta! Veja o que está acontecendo com seus projetos.</span>
+                    </div>
+                </div>
+
+                <!-- INFORMAÇÕES RÁPIDAS -->
+                <div class="component">
+                    <div class="dashboard-tasks">
+
+                        <div class="dashboard-task-information">
+                            <div class="info radius-border">
+                                <span>Projetos Ativos</span>
+                                <p>2</p>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-task-information">
+                            <div class="info radius-border">
+                                <span>Tarefas Pendentes</span>
+                                <p>2</p>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-task-information">
+                            <div class="info radius-border">
+                                <span>Tarefas Concluídas</span>
+                                <p>1</p>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-task-information">
+                            <div class="info radius-border">
+                                <span>Progresso Geral</span>
+                                <p>20%</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PROJETOS ATIVOS -->
+                <div class="component">
+                    <div class="active-projects radius-border">
+                        <h3>Projetos Ativos</h3>
+
+                        <table>
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <div class="title">Lançamento do Aplicativo Mobile</div>
+                                        <span>Lançamento do novo aplicativo iOS e Android</span>
+                                    </td>
+                                    <td>Sarah Chen</td>
+                                    <td><span class="badge">ativo</span></td>
+                                    <td>14 de Mar, 2024</td>
+                                    <td>
+                                        <div class="progress-wrapper">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 30%;"></div>
+                                            </div>
+                                            <span class="progress-text">30%</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="title">Lançamento do Aplicativo Mobile</div>
+                                        <span>Lançamento do novo aplicativo iOS e Android</span>
+                                    </td>
+                                    <td>Sarah Chen</td>
+                                    <td><span class="badge">ativo</span></td>
+                                    <td>14 de Mar, 2024</td>
+                                    <td>
+                                        <div class="progress-wrapper">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 68%;"></div>
+                                            </div>
+                                            <span class="progress-text">68%</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- QUADRO DE TAREFAS -->
+                <div class="component">
+                    <div class="tasks radius-border">
+
+                        <div class="task-board-header">
+                            <div class="filters">
+                                <button class="filter-btn icon-btn">☰ Filtros</button>
+                                <button class="filter-btn active">Todas</button>
+                                <button class="filter-btn">Alta Prioridade</button>
+                                <button class="filter-btn">Minhas Tarefas</button>
+                            </div>
+
+                            <div class="sort">
+                                <button class="icon-btn sort-btn">↓↑ Ordenar</button>
+                            </div>
+                        </div>
+
+                        <h3>Quadro de Tarefas</h3>
+
+                        <div class="moon">
+
+                            <!-- A FAZER -->
+                            <div class="tasks-components">
+                                <div class="top-bar">
+                                    <p>A Fazer</p>
+                                    <p>2</p>
+                                </div>
+
+                                <div class="task-list">
+
+                                    <div class="task-card">
+                                        <div class="card-header">
+                                            <h4 class="task-title">Implementar gateway de pagamento</h4>
+                                            <span class="priority high">alta</span>
+                                        </div>
+
+                                        <p class="task-description">Integrar o processamento de pagamentos Stripe</p>
+
+                                        <div class="tags">
+                                            <span class="tag">back-end</span>
+                                            <span class="tag">pagamento</span>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <div class="user-info">
+                                                <span class="avatar ak">AK</span>
+                                                <span class="username">Alex Kumar</span>
+                                            </div>
+                                            <span class="date">27 Jan</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="task-card">
+                                        <div class="card-header">
+                                            <h4 class="task-title">Escrever documentação da API</h4>
+                                            <span class="priority medium">média</span>
+                                        </div>
+
+                                        <p class="task-description">Documentar todos os endpoints da API REST</p>
+
+                                        <div class="tags">
+                                            <span class="tag">documentação</span>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <div class="user-info">
+                                                <span class="avatar jl">L</span>
+                                                <span class="username">Jordan Lee</span>
+                                            </div>
+                                            <span class="date">31 Jan</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- EM ANDAMENTO -->
+                            <div class="tasks-components">
+                                <div class="top-bar">
+                                    <p>Em Andamento</p>
+                                    <p>1</p>
+                                </div>
+
+                                <div class="task-list">
+
+                                    <div class="task-card">
+                                        <div class="card-header">
+                                            <h4 class="task-title">Design do fluxo de autenticação</h4>
+                                            <span class="priority high">alta</span>
+                                        </div>
+
+                                        <p class="task-description">Criar wireframes e protótipos para login e cadastro</p>
+
+                                        <div class="tags">
+                                            <span class="tag">design</span>
+                                            <span class="tag">ux</span>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <div class="user-info">
+                                                <span class="avatar sc">SC</span>
+                                                <span class="username">Sarah Chen</span>
+                                            </div>
+                                            <span class="date">24 Jan</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- CONCLUÍDO -->
+                            <div class="tasks-components">
+                                <div class="top-bar">
+                                    <p>Concluído</p>
+                                    <p>1</p>
+                                </div>
+
+                                <div class="task-list">
+
+                                    <div class="task-card">
+                                        <div class="card-header">
+                                            <h4 class="task-title">Configurar rastreamento de dados</h4>
+                                            <span class="priority low">baixa</span>
+                                        </div>
+
+                                        <p class="task-description">Implementar o Google Analytics 4</p>
+
+                                        <div class="tags">
+                                            <span class="tag">análise</span>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <div class="user-info">
+                                                <span class="avatar cp">CP</span>
+                                                <span class="username">Chris Park</span>
+                                            </div>
+                                            <span class="date">14 Jan</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
