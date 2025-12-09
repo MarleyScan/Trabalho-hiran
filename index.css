@@ -168,19 +168,16 @@ h3 {
     gap: 1rem;
 }
 
-/* --- Variáveis de Cores (ATUALIZADAS) --- */
 :root {
-    --color-high: #e34c4c;    /* Vermelho (Prioridade High - Não muda) */
-    --color-medium: #e3ac4c;  /* Laranja (Prioridade Medium - Não muda) */
-    --color-low: #5cc69c;     /* Verde (Prioridade Low - Não muda) */
-    --color-primary-button: #5c62d6; /* Azul/Roxo (Botão 'All' - Não muda) */
+    --color-high: #e34c4c;   
+    --color-medium: #e3ac4c; 
+    --color-low: #5cc69c;     
+    --color-primary-button: #5c62d6; 
     --text-secondary: #8f9db3;
-    --bg-card: #1e293b;       /* Fundo do card na imagem - Não muda */
-    --bg-tag: #334155;        /* CORRIGIDO: Cor que você solicitou para Tags e Contagem */
-    --bg-dark-base: #1e293b; /* Fundo principal (do seu .radius-border) */
+    --bg-card: #1e293b;       
+    --bg-tag: #334155;        
+    --bg-dark-base: #1e293b; 
 }
-
-/* --- 1. Layout do Task Board (Filtros) --- */
 
 .task-board-header {
     display: flex;
@@ -226,9 +223,6 @@ h3 {
     border: none;
 }
 
-/* --- 2. Títulos e Contagem de Tarefas nas Colunas --- */
-
-/* Esta regra AGORA USA --bg-tag: #334155 */
 .tasks>.moon .top-bar p:last-child {
     background-color: var(--bg-tag);
     color: var(--text-secondary);
@@ -237,8 +231,6 @@ h3 {
     font-size: 0.8rem;
     font-weight: 500;
 }
-
-/* --- 3. Cartões de Tarefa (.task-card) --- */
 
 .task-card {
     background-color: var(--bg-card); 
@@ -270,10 +262,6 @@ h3 {
     margin: 0;
 }
 
-/* --- 4. Prioridade (high, medium, low) --- */
-/* Note que as cores de prioridade (high/medium/low) usam as variáveis correspondentes e NÃO a cor #334155, 
-   o que está correto de acordo com a imagem que mostra o HIGH em vermelho. */
-
 .priority {
     font-size: 0.75em;
     padding: 3px 8px;
@@ -298,13 +286,10 @@ h3 {
     color: #ffffff; 
 }
 
-/* --- 5. Tags de Categoria --- */
-
 .tags {
     margin-top: 5px;
 }
 
-/* Esta regra AGORA USA --bg-tag: #334155 */
 .tag {
     display: inline-block;
     background-color: var(--bg-tag);
@@ -315,8 +300,6 @@ h3 {
     font-weight: 500;
     margin-right: 5px;
 }
-
-/* --- 6. Footer do Cartão (Usuário e Data) --- */
 
 .card-footer {
     display: flex;
