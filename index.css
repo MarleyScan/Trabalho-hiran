@@ -10,14 +10,10 @@
     border: 0;
 }
 
-
-
 span {
     color: #8f9db3;
     font-weight: 500;
 }
-
-
 
 span p,
 h1,
@@ -25,8 +21,6 @@ h2,
 h3 {
     user-select: none;
 }
-
-
 
 .radius-border {
     padding: 1rem;
@@ -45,14 +39,11 @@ h3 {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-
     padding-top: 2rem;
-
     background-color: #0f172a;
     width: 100%;
     min-height: 100vh;
 }
-
 
 .dashboard-tasks {
     display: grid;
@@ -62,14 +53,12 @@ h3 {
     margin: 0 auto;
 }
 
-
 .dashboard-task-information>.info {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
     max-width: 20rem;
     height: 100%;
-
 }
 
 .dashboard-task-information>.info>span {
@@ -98,7 +87,6 @@ h3 {
     vertical-align: middle;
     border-bottom: 1px solid #334155;
 }
-
 
 .active-projects tbody tr:hover {
     background-color: #475569;
@@ -169,13 +157,13 @@ h3 {
 }
 
 :root {
-    --color-high: #e34c4c;   
+    --color-high: #e34c4c; 
     --color-medium: #e3ac4c; 
-    --color-low: #5cc69c;     
+    --color-low: #5cc69c; 
     --color-primary-button: #5c62d6; 
     --text-secondary: #8f9db3;
-    --bg-card: #1e293b;       
-    --bg-tag: #334155;        
+    --bg-card: #1e293b; 
+    --bg-tag: #334155; 
     --bg-dark-base: #1e293b; 
 }
 
@@ -334,7 +322,6 @@ h3 {
     font-size: 0.7em;
 }
 
-/* Cores específicas para avatares */
 .avatar.ak { background-color: #5c62d6; }
 .avatar.sc { background-color: #e3ac4c; }
 .avatar.mj { background-color: #5cc69c; }
@@ -345,4 +332,63 @@ h3 {
 .date {
     font-weight: 500;
     color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .component {
+        padding: 0 1rem;
+    }
+
+    .tasks>.moon {
+        grid-template-columns: 1fr; 
+        grid-column-gap: 0; 
+    }
+
+    .dashboard-tasks {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .active-projects td {
+        padding: 12px 16px; 
+        font-size: 0.9em;
+    }
+    
+    .task-description {
+        display: none;
+    }
+    
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .filter-btn, .sort-btn {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .filters {
+        flex-wrap: wrap; 
+    }
+}
+
+@media (max-width: 500px) {
+    .active-projects>table {
+        display: block; 
+        overflow-x: auto; 
+        white-space: nowrap; 
+        width: 100%;
+    }
+    
+    .active-projects {
+        padding: 1rem; 
+    }
+    
+    .active-projects>.progress-wrapper {
+        flex-direction: row; 
+        gap: 8px;
+    }
+    
+    .tasks>.moon .top-bar {
+        flex-wrap: wrap; 
+    }
 }
